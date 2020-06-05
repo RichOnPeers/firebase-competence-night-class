@@ -2,11 +2,13 @@
 
 ## To do
 
-* Create and configure the project on the Firebase website
+###  Create and configure the project on the Firebase website
 
-* Create the two files and connect your app to Firebase
+### Create the two files and connect your app to Firebase
+`
 .env.production
 .env.development
+`
 
 Add your Firebase details to both:
 `REACT_APP_FIREBASE_API_KEY=XXXXXXXXXXXXXX
@@ -15,25 +17,27 @@ REACT_APP_FIREBASE_DATABASE_URL=XXXXXXXXXXXXXX.firebaseio.com
 REACT_APP_FIREBASE_PROJECT_ID=XXXXXXXXXXXXXX
 REACT_APP_FIREBASE_STORAGE_BUCKET=gs://XXXXXXXXXXXXXX.appspot.com/`
 
-* Install firebase-cli
+### [Install firebase-cli](https://firebase.google.com/docs/cli)
 
-### <https://firebase.google.com/docs/cli>
+### Configure Firebase in your editor
 
-* Configure Firebase in your editor
+`
+firebase login
+`
 
-### firebase login
+`
+firebase init
+`
 
-### firebase init
+### Run the app
 
-Run the app
+ `yarn`
 
-### `yarn`
+ `yarn start`
 
-### `yarn start`
+### Complete the FIXME comments in the code
 
-Complete the FIXME comments in the code
-
-* Deploy to Firebase
+### Deploy to Firebase
 
 ### `yarn build`
 

@@ -39,6 +39,6 @@ firebase init
 
 ### Deploy to Firebase
 
-### `yarn build`
+`yarn build`
 
-### `firebase deploy`
+`firebase deploy`

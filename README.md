@@ -6,18 +6,16 @@
 
 ###  Create and configure the project on the Firebase website
 
-### Create the two files and connect your app to Firebase
+### Add firebase project details to 'src/configs/firebase.js'
 `
-.env.production
-.env.development
+const config = {
+  apiKey: 'XXXXXXXXXXXXXX',
+  authDomain: 'XXXXXXXXXXXXXX.firebaseapp.com',
+  databaseURL: 'XXXXXXXXXXXXXX.firebaseio.com',
+  projectId: 'XXXXXXXXXXXXXX',
+  storageBucket: 'gs://XXXXXXXXXXXXXX.appspot.com/'
+};
 `
-
-Add your Firebase details to both:
-`REACT_APP_FIREBASE_API_KEY=XXXXXXXXXXXXXX
-REACT_APP_FIREBASE_AUTH_DOMAIN=XXXXXXXXXXXXXX.firebaseapp.com
-REACT_APP_FIREBASE_DATABASE_URL=XXXXXXXXXXXXXX.firebaseio.com
-REACT_APP_FIREBASE_PROJECT_ID=XXXXXXXXXXXXXX
-REACT_APP_FIREBASE_STORAGE_BUCKET=gs://XXXXXXXXXXXXXX.appspot.com/`
 
 ### [Install firebase-cli](https://firebase.google.com/docs/cli)
 

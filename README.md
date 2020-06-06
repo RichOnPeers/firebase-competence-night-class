@@ -7,7 +7,7 @@
 ###  Create and configure the project on the Firebase website
 
 ### Add firebase project details to 'src/configs/firebase.js'
-`
+```
 const config = {
   apiKey: 'XXXXXXXXXXXXXX',
   authDomain: 'XXXXXXXXXXXXXX.firebaseapp.com',
@@ -15,7 +15,7 @@ const config = {
   projectId: 'XXXXXXXXXXXXXX',
   storageBucket: 'gs://XXXXXXXXXXXXXX.appspot.com/'
 };
-`
+```
 
 ### [Install firebase-cli](https://firebase.google.com/docs/cli)
 

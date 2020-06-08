@@ -19,6 +19,10 @@ const config = {
 
 ### [Install firebase-cli](https://firebase.google.com/docs/cli)
 
+### Bootstrap the app
+
+ `yarn`
+
 ### Configure Firebase in your editor
 
 `
@@ -30,8 +34,6 @@ firebase init
 `
 
 ### Run the app
-
- `yarn`
 
  `yarn start`
 

@@ -29,10 +29,6 @@ const config = {
 firebase login
 `
 
-`
-firebase init
-`
-
 ### Run the app
 
  `yarn start`

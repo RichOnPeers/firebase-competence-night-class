@@ -2,7 +2,7 @@
 
 ## [Demo](https://fir-competence-night.web.app/)
 
-## Todo
+## Steps
 
 ###  Create and configure the project on the Firebase website
 

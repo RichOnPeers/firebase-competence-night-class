@@ -33,7 +33,7 @@ firebase login
 
  `yarn start`
 
-### Complete the FIXME comments in the code
+### Complete the FIXME comments with help from the [Docs](https://firebase.google.com/docs/guides)
 
 ### Deploy to Firebase
 

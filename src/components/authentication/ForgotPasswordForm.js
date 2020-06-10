@@ -10,7 +10,8 @@ const ForgotPasswordForm = (props) => {
     props.setSubmitting(true);
 
     /* 
-      FIXME: Handle password reset, stop loading, create a Notification "check your e-mail"
+      FIXME: Handle password reset, stop loading
+      Notification("success", "Password reset", "Check your e-mail")
     */
   };
 

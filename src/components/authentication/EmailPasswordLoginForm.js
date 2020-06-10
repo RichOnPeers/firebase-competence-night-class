@@ -11,12 +11,23 @@ const EmailPasswordLoginForm = (props) => {
     const { email, password } = values;
     props.setSubmitting(true);
 
-    /* 
-      FIXME:
-      Handle login
-      Dispatch
-      Stop loading
-    */
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        props.setSubmitting(false);
+        dispatch({
+          type: "LOGIN_EMAIL",
+          payload: {
+            id: result.user.uid,
+            user: result.user.email,
+          },
+        });
+      })
+      .catch(() => {
+        props.setSubmitting(false);
+        Notification("error", "Issue", "Incorrect login details");
+      });
   };
 
   return (

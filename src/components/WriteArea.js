@@ -9,12 +9,19 @@ const WriteArea = () => {
   const [message, setMessage] = useState("");
 
   const sendMessage = () => {
-
-    /* 
-      FIXME: 
-      Send an object to Firestore containing "user", "text" and "created" (server timestamp)
-    */
-   
+    db.collection("messages")
+      .add({
+        user: state.user,
+        text: message,
+        created: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        setMessage("");
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
   };
 
   return (

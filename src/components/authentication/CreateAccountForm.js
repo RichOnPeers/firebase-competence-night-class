@@ -11,13 +11,23 @@ const CreateAccountForm = (props) => {
     const { email, password } = values;
     props.setSubmitting(true);
 
-    /* 
-      FIXME:
-      Create user
-      Dispatch
-      Stop loading
-    */
-   
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        props.setSubmitting(false);
+        dispatch({
+          type: "LOGIN_EMAIL",
+          payload: {
+            id: result.user.uid,
+            user: result.user.email,
+          },
+        });
+      })
+      .catch(() => {
+        props.setSubmitting(false);
+        Notification("error", "Issue", "Incorrect login details");
+      });
   };
 
   return (

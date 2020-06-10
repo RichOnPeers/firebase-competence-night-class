@@ -9,12 +9,17 @@ const ForgotPasswordForm = (props) => {
     const { email } = values;
     props.setSubmitting(true);
 
-    /* 
-      FIXME: 
-      Handle password reset
-      Stop loading
-      Notification("success", "Password reset", "Check your e-mail")
-    */
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        props.setSubmitting(false);
+        Notification("success", "Sent", "Check your e-mail");
+      })
+      .catch(() => {
+        props.setSubmitting(false);
+        Notification("error", "Issue", "Provided e-mail does not exist");
+      });
   };
 
   return (

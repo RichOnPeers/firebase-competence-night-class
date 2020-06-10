@@ -12,13 +12,19 @@ const HistoryList = () => {
   const [messages, setMessages] = useState(null);
 
   useEffect(() => {
-
-    /* 
-      FIXME: 
-      Get and listen to collection "messages"
-      Order messages by "created"
-    */
-
+    const unsubscribe = db
+      .collection("messages")
+      .orderBy("created", "asc")
+      .onSnapshot((querySnapshot) => {
+        const messages = [];
+        querySnapshot.forEach((doc) => {
+          messages.push({ ...doc.data(), ...{ docId: doc.id } });
+        });
+        setMessages(messages);
+      });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const removeEntry = ({ docId }) => {
@@ -53,23 +59,40 @@ const HistoryList = () => {
 
   const uploadAvatar = async (image) => {
     const url = `/avatar/${state.user}/${image.name}`;
-
-    /* 
-      FIXME: 
-      Upload image (avatar) to "storage" with "url" constant
-      Call "setUserAvatar" passing the url
-    */
+    storage
+      .ref(url)
+      .put(image)
+      .catch(() => console.error)
+      .then(() => {
+        console.log("Avatar uploaded!");
+        setUserAvatar(url);
+      });
   };
 
   const setUserAvatar = async (url) => {
-    
-    /* 
-      FIXME: 
-      Set "avatar" in collection "users" for the logged in user "state.user"
-      Fetch the storage bucket URL from the "url"
-      Dispatch "LOAD_AVATAR" passing it "payload => avatarUrl"
-    */
-   
+    await db
+      .collection("users")
+      .doc(state.user)
+      .set({
+        avatar: url,
+      })
+      .catch(() => console.error)
+      .then(() => console.log(`${state.user} has avatar in bucket ${url}`));
+    storage
+      .ref()
+      .child(url)
+      .getDownloadURL()
+      .then((avatarUrl) => {
+        dispatch({
+          type: "LOAD_AVATAR",
+          payload: {
+            avatarUrl,
+          },
+        });
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
   };
 
   return (

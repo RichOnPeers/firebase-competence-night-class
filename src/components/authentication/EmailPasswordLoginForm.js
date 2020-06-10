@@ -12,7 +12,10 @@ const EmailPasswordLoginForm = (props) => {
     props.setSubmitting(true);
 
     /* 
-      FIXME: Handle login, dispatch and stop loading
+      FIXME:
+      Handle login
+      Dispatch
+      Stop loading
     */
   };
 

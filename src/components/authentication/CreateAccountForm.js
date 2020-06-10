@@ -12,7 +12,10 @@ const CreateAccountForm = (props) => {
     props.setSubmitting(true);
 
     /* 
-      FIXME: Create user, dispatch and stop loading
+      FIXME:
+      Create user
+      Dispatch
+      Stop loading
     */
    
   };

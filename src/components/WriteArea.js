@@ -11,7 +11,8 @@ const WriteArea = () => {
   const sendMessage = () => {
 
     /* 
-      FIXME: Send an object to Firestore containing "user", "text" and "created" (server timestamp)
+      FIXME: 
+      Send an object to Firestore containing "user", "text" and "created" (server timestamp)
     */
    
   };

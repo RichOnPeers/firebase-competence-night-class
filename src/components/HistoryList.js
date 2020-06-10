@@ -14,7 +14,9 @@ const HistoryList = () => {
   useEffect(() => {
 
     /* 
-      FIXME: Get and listen to collection "messages", order messages by "created"
+      FIXME: 
+      Get and listen to collection "messages"
+      Order messages by "created"
     */
 
   }, []);
@@ -53,16 +55,19 @@ const HistoryList = () => {
     const url = `/avatar/${state.user}/${image.name}`;
 
     /* 
-      FIXME: Upload image (avatar) to "storage" with the "url" above and then
-      call "setUserAvatar" passing the url
+      FIXME: 
+      Upload image (avatar) to "storage" with "url" constant
+      Call "setUserAvatar" passing the url
     */
   };
 
   const setUserAvatar = async (url) => {
     
     /* 
-      FIXME: set "avatar" in collection "users" for the logged in user "state.user" and then
-      fetch the storage bucket URL from the "url" and dispatch "LOAD_AVATAR" passing it "payload => avatarUrl"
+      FIXME: 
+      Set "avatar" in collection "users" for the logged in user "state.user"
+      Fetch the storage bucket URL from the "url"
+      Dispatch "LOAD_AVATAR" passing it "payload => avatarUrl"
     */
    
   };

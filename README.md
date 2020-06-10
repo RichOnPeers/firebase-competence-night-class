@@ -17,7 +17,8 @@ const config = {
 };
 ```
 
-### [Install firebase-cli](https://firebase.google.com/docs/cli)
+### Install firebase-cli from [Docs](https://firebase.google.com/docs/cli)
+`npm install -g firebase-tools`
 
 ### Bootstrap the app
 
@@ -33,7 +34,7 @@ firebase login
 
  `yarn start`
 
-### Complete the FIXME comments with help from the [Docs](https://firebase.google.com/docs/guides)
+### Complete the FIXME comments with help from [Docs](https://firebase.google.com/docs/guides)
 
 ### Deploy to Firebase
 
